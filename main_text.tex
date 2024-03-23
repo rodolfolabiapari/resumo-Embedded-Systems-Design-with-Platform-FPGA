@@ -1,0 +1,144 @@
+% !TeX encoding = UTF-8
+\documentclass[bind,a4paper]{mythesis}
+
+\usepackage{thesis}
+%\usepackage[full,round]{harvard}%
+\usepackage{natbib}%\bibpunct{(}{)}{;}{a}{,}{,}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{verbatim}
+%\usepackage[latin1]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{fancyhdr,fancybox}
+\usepackage{psfrag}
+\usepackage{rotating}
+\usepackage{url}
+%\usepackage[colorlinks]{hyperref}
+%\usepackage{listings}
+\usepackage{epstopdf}
+\usepackage{makeidx}
+\usepackage{authorindex}
+\usepackage{multirow}
+\usepackage{picture}
+\usepackage[algochapter,algoruled,linesnumbered,vlined,portugues]{algorithm2e}
+\usepackage{algorithmic2e}
+%\usepackage{rotating}
+\usepackage{tocbibind}
+\usepackage{array}
+\usepackage{lscape}
+%\usepackage{ragged2e}
+
+%\usepackage[ruled,vlined,portuguese]{algorithm2e}
+\usepackage{rotating}
+\usepackage{longtable}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{cancel}
+\usepackage{scalefnt}
+%\usepackage{natbib} % [longnamesfirst]
+
+\usepackage{float}
+\restylefloat{figure}
+%\usepackage[T1]{fontenc}
+%\input{tex/defs.tex}
+\makeindex
+
+\newcommand{\listofalgorithmes}{\tocfile{\listalgorithmcfname}{loa}}
+
+\newenvironment{VarDescription}[1]%
+  {\begin{list}{}{\renewcommand{\makelabel}[1]{\hspace{0cm}\hfil\textbf{##1}  :}%
+    \settowidth{\labelwidth}{\hspace{0cm}\textbf{#1} :}%
+    \setlength{\leftmargin}{\labelwidth}\addtolength{\leftmargin}{\labelsep}}}%
+  {\end{list}}
+	
+\newcounter{matriz}
+\newenvironment{matriz}{\refstepcounter{matriz}\equation}{\tag{M\thematriz}\endequation}
+
+
+%\input{macros}
+
+%% PDF metadata
+\makeatletter
+\@ifpackageloaded{hyperref}{%
+\hypersetup{%
+colorlinks=false,
+pdftitle = {Título},
+pdfsubject = {Rodolfo Labiapari Mansur Guimarães's MsC thesis},
+pdfkeywords = {a},
+pdfauthor = {\textcopyright\ Rodolfo Labiapari Mansur Guimarães}}
+}{}
+\makeatother
+
+%Hyphenations
+\hyphenation{XHSTT}
+%\hyphenation{res-tri-ções}
+\hyphenation{co-nhe-ci-do}
+\hyphenation{co-nhe-ci-da}
+\hyphenation{re-a-li-za}
+\hyphenation{vi-zi-nho}
+\hyphenation{clim-bing}
+\hyphenation{ran-king}
+\hyphenation{me-lhor}
+\hyphenation{ou-tras}
+\hyphenation{ge-ra-das}
+%\hyphenation{vi-zi-nhan-ça}
+%\hyphenation{vi-zi-nhan-ças}
+\hyphenation{ex-pe-ri-men-tos}
+\hyphenation{pro-ble-ma}
+%\hyphenation{su-ges-tões}
+\hyphenation{pos-te-rior-men-te}
+
+
+%% Define the thesis title and author
+\begin{document}
+\let\cleardoublepage\clearpage
+\title{Resumo do Livro \textit{Embedded Systems Design with Platform FPGAs: Principles and Practices}}
+\author{Rodolfo Labiapari Mansur Guimarães}%% Start the document
+
+%% Define the un-numbered front matter (cover pages, rubrik and table of contents)
+\begin{frontmatter}
+	\selectlanguage{brazilian}
+	\input{tex/capa}
+\end{frontmatter}
+
+%% Start the content body of the thesis
+\begin{mainmatter}
+  \selectlanguage{brazilian}
+  \input{tex/nomenclature}
+	\let\cleardoublepage\clearpage
+	%\input{tex/chap1_final}
+	%\input{tex/resume_book_incomplete}
+	\input{tex/part_3_system_design}
+	\input{tex/part_4_partitioning}
+	%\input{tex/chap2}
+	%\input{tex/chap3_final}
+	%\input{tex/chap4}
+	%\input{tex/chap5}
+	%\input{tex/chap6_final}
+\end{mainmatter}
+
+%% Produce the appendices
+\begin{appendices}
+\begin{flushleft}
+
+\end{flushleft}
+	  \selectlanguage{brazilian}
+  	%\input{tex/appendices}
+\end{appendices}
+\let\cleardoublepage\clearpage
+%% Produce the un-numbered back matter (e.g. colophon,
+%% bibliography, tables of figures etc., index...)
+\begin{backmatter}
+	%\input{tex/backmatter}
+\end{backmatter}
+
+%% Close
+\end{document}
